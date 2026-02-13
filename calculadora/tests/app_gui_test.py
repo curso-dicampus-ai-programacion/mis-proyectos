@@ -1,8 +1,14 @@
-# calc_gui_test.py
-import unittest
-from calc_gui import press_number, press_operation, press_equal, clear, backspace, format_result
+#!/usr/bin/env python3
 
-# Creamos un "display" falso para tests
+import os
+import sys
+import unittest
+
+from app_gui import (
+        press_number, press_operation, press_equal, clear,
+                      backspace, format_result
+)
+
 class DummyEntry:
     def __init__(self):
         self.text = ""
@@ -13,7 +19,6 @@ class DummyEntry:
     def get(self):
         return self.text
 
-# Sobreescribimos display del módulo calc_gui
 import calc_gui
 calc_gui.display = DummyEntry()
 

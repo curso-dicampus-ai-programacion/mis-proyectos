@@ -17,7 +17,8 @@ def multiply(num1, num2):
 def divide(num1, num2):
     if num2 != 0:
         return num1 / num2
-    return 0
+    print("No se puede dividir entre 0.\n")
+    return None
 
 def modulus(num1, num2):
     return num1 % num2
@@ -59,11 +60,15 @@ def main():
         print("2. Restar")
         print("3. Multiplicar")
         print("4. Dividir")
+        print("5. Modulo")
+        print("6. Exponente")
 
         option = int(input("Introduce el valor de la operación: "))
 
         result = handle_operation(option, num1, num2)
-        print("El resultado de la operación es:", result, "\n")
+
+        if result != None:
+            print("El resultado de la operación es:", result, "\n")
 
         isRepeat = handle_repeat()
 
