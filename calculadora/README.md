@@ -29,8 +29,8 @@ La aplicación simula el comportamiento de una calculadora básica similar a la 
 
 ### 🎨 Interfaz
 
-- Interfaz por linea de comandos `calc_cli.py`.
-- Interfaz gráfica `calc_gui.py`.
+- Interfaz por linea de comandos `app.py`.
+- Interfaz gráfica `app_gui.py`.
 - Tema oscuro moderno
 - Botones organizados en cuadrícula
 - Colores diferenciados por tipo de botón:
@@ -133,14 +133,18 @@ Se encarga de:
 Para ejecutar:
 
 ```bash
-python calc.py
+python app.py
+```
+
+```bash
+python app_gui.py
 ```
 
 ---
 
 ## 📂 Estructura del Código
 
-El código fuente del archivo `calc_cli.py` se ha separado en varias secciones para mejorar la legibilidad. 
+El código fuente del archivo `app.py` se ha separado en varias secciones para mejorar la legibilidad. 
 
 ```
 ├── Funciones matemáticas

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Colors
 blue="\033[34m"
 green="\033[32m"

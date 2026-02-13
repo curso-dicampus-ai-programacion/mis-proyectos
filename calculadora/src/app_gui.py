@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import tkinter as tk
 
 def add(num1, num2):
@@ -22,13 +24,10 @@ def modulus(num1, num2):
 def power(num1, num2):
     return num1 ** num2
 
-
 current_input = ""
 first_number = None
 operation = None
 
-
-# ----------- NUEVA FUNCIÓN -----------
 def format_result(result):
     """Elimina decimales innecesarios"""
     if isinstance(result, float):
@@ -38,17 +37,14 @@ def format_result(result):
             return str(result)
     return str(result)
 
-
 def press_number(num):
     global current_input
 
-    # Evitar múltiples puntos decimales
     if num == "." and "." in current_input:
         return
 
     current_input += str(num)
     update_display(current_input)
-
 
 def press_operation(op):
     global first_number, current_input, operation
@@ -57,7 +53,6 @@ def press_operation(op):
         operation = op
         current_input = ""
         update_display(op)
-
 
 def press_equal():
     global first_number, current_input, operation
@@ -87,7 +82,6 @@ def press_equal():
         first_number = None
         operation = None
 
-
 def clear():
     global current_input, first_number, operation
     current_input = ""
@@ -95,18 +89,14 @@ def clear():
     operation = None
     update_display("")
 
-
-# ----------- NUEVA FUNCIÓN -----------
 def backspace():
     global current_input
     current_input = current_input[:-1]
     update_display(current_input)
 
-
 def update_display(value):
     display.delete(0, tk.END)
     display.insert(0, str(value) + " ")
-
 
 root = tk.Tk()
 root.title("Calculadora")
@@ -114,7 +104,6 @@ root.geometry("322x425")
 root.resizable(False, False)
 root.configure(bg="#1e1e1e")
 
-# Colores
 bg_numbers = "#2d2d2d"
 bg_operators = "#3a3a3a"
 bg_equal = "#0078D7"
@@ -122,7 +111,6 @@ bg_clear = "#d13438"
 bg_back = "#444444"
 fg_text = "white"
 
-# Pantalla
 display = tk.Entry(
     root,
     font=("Arial", 20),
@@ -135,7 +123,6 @@ display = tk.Entry(
 )
 display.grid(row=0, column=0, columnspan=4, padx=10, pady=15, ipady=10)
 
-# Botones
 buttons = [
     ('C', 1, 0), ('⌫', 1, 1), ('%', 1, 2), ('^', 1, 3),
 
